@@ -69,7 +69,7 @@ function (_React$PureComponent) {
           prevCountry = _this$state.country; // After the new `country` has been selected,
       // if the phone number `<input/>` holds any digits
       // then migrate those digits for the new `country`.
-
+      if (_this.props.prevCountry) _this.props.prevCountry(newCountry)
       var newParsedInput = migrateParsedInputForNewCountry(prevParsedInput, prevCountry, newCountry, metadata, // Convert the phone number to "national" format
       // when the user changes the selected country by hand.
       true);
@@ -79,8 +79,6 @@ function (_React$PureComponent) {
       // then don't override that already selected country
       // if the `defaultCountry` property changes.
       // That's what `hasUserSelectedACountry` flag is for.
-
-
       _this.setState({
         country: newCountry,
         hasUserSelectedACountry: true,
@@ -277,6 +275,7 @@ function (_React$PureComponent) {
           internationalIcon = _this$props5.internationalIcon,
           displayInitialValueAsLocalNumber = _this$props5.displayInitialValueAsLocalNumber,
           onCountryChange = _this$props5.onCountryChange,
+          prevCountry = _this$props5.prevCountry,
           limitMaxLength = _this$props5.limitMaxLength,
           reset = _this$props5.reset,
           metadata = _this$props5.metadata,
@@ -284,6 +283,7 @@ function (_React$PureComponent) {
           clearDefInpClass = _this$props5.clearDefInpClass,
           divClass = _this$props5.divClass,
           clearDefDivClass = _this$props5.clearDefDivClass,
+          countryCode = _this$props5.countryCode,
           rest = _objectWithoutProperties(_this$props5, ["name", "disabled", "autoComplete", "style", "className", "inputRef", "inputComponent", "numberInputProps", "smartCaret", "countrySelectComponent", "countrySelectProps", "defaultCountry", "countries", "countryOptionsOrder", "labels", "flags", "flagComponent", "flagUrl", "addInternationalOption", "internationalIcon", "displayInitialValueAsLocalNumber", "onCountryChange", "limitMaxLength", "reset", "metadata"]);
 
       var _this$state2 = this.state,
@@ -308,7 +308,8 @@ function (_React$PureComponent) {
         onBlur: this._onBlur,
         disabled: disabled,
         iconComponent: this.CountryIcon
-      })), React.createElement(InputComponent, _extends({
+      })),React.createElement('div', {id: 'country-code',style: {borderBottom: '1px solid #dfdfdf', padding: '8px 0px 8px 0px', marginLeft: (countryCode) ? '10px' : '0px'}}, countryCode),
+      React.createElement(InputComponent, _extends({
         ref: this.getInputRef(),
         type: "tel",
         autoComplete: autoComplete

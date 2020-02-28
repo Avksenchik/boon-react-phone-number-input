@@ -309,7 +309,7 @@ function (_React$PureComponent) {
         onBlur: this._onBlur,
         disabled: disabled,
         iconComponent: this.CountryIcon
-      })),React.createElement('div', {id: 'country-code',style: {borderBottom: '1px solid #dfdfdf', padding: '8px 0px 8px 0px', marginLeft: (countryCode) ? '10px' : '0px'}}, countryCode),
+      })),React.createElement('div', {id: 'country-code',style: {borderBottom: '1px solid #dfdfdf', padding: '8px 0px 8px 0px', marginLeft: (countryCode) ? '5px' : '0px'}}, countryCode),
       React.createElement(InputComponent, _extends({
         ref: this.getInputRef(),
         type: "tel",

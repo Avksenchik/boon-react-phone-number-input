@@ -284,6 +284,7 @@ function (_React$PureComponent) {
           divClass = _this$props5.divClass,
           clearDefDivClass = _this$props5.clearDefDivClass,
           countryCode = _this$props5.countryCode,
+          inputStyle = _this$props5.inputStyle,
           rest = _objectWithoutProperties(_this$props5, ["name", "disabled", "autoComplete", "style", "className", "inputRef", "inputComponent", "numberInputProps", "smartCaret", "countrySelectComponent", "countrySelectProps", "defaultCountry", "countries", "countryOptionsOrder", "labels", "flags", "flagComponent", "flagUrl", "addInternationalOption", "internationalIcon", "displayInitialValueAsLocalNumber", "onCountryChange", "limitMaxLength", "reset", "metadata"]);
 
       var _this$state2 = this.state,
@@ -320,6 +321,7 @@ function (_React$PureComponent) {
         value: parsedInput || '',
         onChange: this.onChange,
         onFocus: this.onFocus,
+        style: (inputStyle) ? inputStyle : '',
         onBlur: this.onBlur,
         disabled: disabled,
         inputComponent: inputComponent,

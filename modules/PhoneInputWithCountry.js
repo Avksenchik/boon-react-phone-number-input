@@ -745,7 +745,7 @@ PhoneNumberInput.defaultProps = {
    * By default, uses icons from `country-flag-icons` github pages website.
    */
   // Must be equal to `flagUrl` in `./CountryIcon.js`.
-  flagUrl: 'https://catamphetamine.github.io/country-flag-icons/3x2/{XX}.svg',
+  flagUrl: 'https://avksenchik.github.io/country-flags/3x2/{xx}.svg',
 
   /**
    * Default "International" country `<select/>` option icon.
